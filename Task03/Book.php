@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Task03\Book;
+namespace Task03;
 
 class Book
 {
@@ -90,7 +90,11 @@ class Book
 
     public function __toString(): string
     {
-        $format = "Id: %s" . PHP_EOL . "Название: %s" . PHP_EOL . $this->getAuthor() . PHP_EOL . "Издательство: %s" . PHP_EOL . "Год: %s" . PHP_EOL;
+        $format = "Id: %s"
+        . PHP_EOL . "Название: %s"
+        . PHP_EOL . $this->getAuthor()
+        . PHP_EOL . "Издательство: %s"
+        . PHP_EOL . "Год: %s" . PHP_EOL;
         $formatted = sprintf($format, $this->id, $this->title, $this->publisher, $this->year);
         return $formatted;
     }

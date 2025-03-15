@@ -1,6 +1,6 @@
 <?php
 
-namespace Task03\BooksList;
+namespace Task03;
 
 class BooksList
 {
