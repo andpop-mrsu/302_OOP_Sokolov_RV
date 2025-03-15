@@ -2,11 +2,17 @@
 
 declare(strict_types=1);
 
+namespace Task03;
+
 function runTest(): void
 {
    // String representation test
     $book1 = new Book("Название книги", "Автор книги", "Издательство", 2021);
-    $correct = "Id: 1" . PHP_EOL . "Название: Название книги" . PHP_EOL . "Автор1: Автор книги" . PHP_EOL . "Издательство: Издательство" . PHP_EOL . "Год: 2021" . PHP_EOL;
+    $correct = "Id: 1"
+    . PHP_EOL . "Название: Название книги"
+    . PHP_EOL . "Автор1: Автор книги"
+    . PHP_EOL . "Издательство: Издательство"
+    . PHP_EOL . "Год: 2021" . PHP_EOL;
     echo "Ожидается:\n$correct" . PHP_EOL . PHP_EOL;
     echo "Получено:\n" . $book1->__toString() . PHP_EOL . PHP_EOL;
 
@@ -18,7 +24,11 @@ function runTest(): void
 
    // Setters test
     $book1->setTitle("Новое название")->setAuthor("Новый автор")->setPublisher("Новое издательство")->setYear(2022);
-    $correct = "Id: 1" . PHP_EOL . "Название: Новое название" . PHP_EOL . "Автор1: Новый автор" . PHP_EOL . "Издательство: Новое издательство" . PHP_EOL . "Год: 2022" . PHP_EOL;
+    $correct = "Id: 1"
+    . PHP_EOL . "Название: Новое название"
+    . PHP_EOL . "Автор1: Новый автор"
+    . PHP_EOL . "Издательство: Новое издательство"
+    . PHP_EOL . "Год: 2022" . PHP_EOL;
     echo "Ожидается:\n$correct" . PHP_EOL . PHP_EOL;
     echo "Получено:\n" . $book1->__toString() . PHP_EOL . PHP_EOL;
 
@@ -84,11 +94,20 @@ function runTest(): void
     $booksList = new BooksList($book1);
     $booksList->add($book2);
 
-    $correct1 = "Id: 1" . PHP_EOL . "Название: Новое название" . PHP_EOL . "Автор1: Новый автор" . PHP_EOL . "Издательство: Новое издательство" . PHP_EOL . "Год: 2022" . PHP_EOL;
-    $correct2 = "Id: 2" . PHP_EOL . "Название: Книга 2" . PHP_EOL . "Автор1: Автор 2" . PHP_EOL . "Издательство: Издательство 2" . PHP_EOL . "Год: 2022" . PHP_EOL;
+    $correct1 = "Id: 1"
+    . PHP_EOL . "Название: Новое название"
+    . PHP_EOL . "Автор1: Новый автор"
+    . PHP_EOL . "Издательство: Новое издательство"
+    . PHP_EOL . "Год: 2022" . PHP_EOL;
+    $correct2 = "Id: 2"
+    . PHP_EOL . "Название: Книга 2"
+    . PHP_EOL . "Автор1: Автор 2"
+    . PHP_EOL . "Издательство: Издательство 2"
+    . PHP_EOL . "Год: 2022" . PHP_EOL;
 
     echo "Ожидается:\n$correct1" . PHP_EOL . $correct2 . PHP_EOL . PHP_EOL;
-    echo "Получено:\n" . $booksList->get(0)->__toString() . PHP_EOL . $booksList->get(1)->__toString() . PHP_EOL . PHP_EOL;
+    echo "Получено:\n" . $booksList->get(0)->__toString() . PHP_EOL . $booksList->get(1)->__toString()
+    . PHP_EOL . PHP_EOL;
 
     if ($booksList->get(0)->__toString() == $correct1 && $booksList->get(1)->__toString() == $correct2) {
         echo "Тест успешно пройден" . PHP_EOL . PHP_EOL . PHP_EOL;

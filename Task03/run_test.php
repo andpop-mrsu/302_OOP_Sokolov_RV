@@ -6,4 +6,4 @@
     require_once __DIR__ . '/BooksList.php';
     require_once __DIR__ . '/Test.php';
 
-    runTest();
+    Task03\runTest();
