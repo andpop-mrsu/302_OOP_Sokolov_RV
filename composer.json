@@ -1,0 +1,9 @@
+{
+    "name": "sokolov/302_oop_sokolov_rv",
+    "description": "work",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
